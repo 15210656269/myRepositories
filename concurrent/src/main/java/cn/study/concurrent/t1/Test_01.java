@@ -3,6 +3,9 @@ package cn.study.concurrent.t1;
 /**
  * java迸发编程01
  * synchronized同步锁学习
+ *
+ * 注意"：
+ *  1、synchronized锁this关键字和锁方法，都是锁的当前对象
  */
 public class Test_01 {
     private int count = 0;
