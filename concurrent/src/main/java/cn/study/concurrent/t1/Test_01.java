@@ -17,7 +17,7 @@ public class Test_01 {
      */
     public void testSnyc01(){
         synchronized (o){
-            System.out.println(Thread.currentThread().getName() + " count = " + count);
+            System.out.println(Thread.currentThread().getName() + " count = " + count++);
         }
     }
 
@@ -27,7 +27,7 @@ public class Test_01 {
      */
     public void testSnyc02(){
         synchronized (this){
-            System.out.println(Thread.currentThread().getName() + " count = " + count);
+            System.out.println(Thread.currentThread().getName() + " count = " + count++);
         }
     }
 
@@ -36,6 +36,15 @@ public class Test_01 {
      * 测试同步锁方法,也是锁当前对象
      */
     public synchronized void testSync03(){
-        System.out.println(Thread.currentThread().getName() + " count = " + count);
+        System.out.println(Thread.currentThread().getName() + " count = " + count++);
+    }
+
+    public static void main(String[] args) {
+        Test_01 t = new Test_01();
+        t.testSnyc01();
+        t.testSnyc01();
+        t.testSnyc01();
+        t.testSnyc02();
+        t.testSync03();
     }
 }
